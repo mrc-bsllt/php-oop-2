@@ -22,14 +22,14 @@ class Phone extends Product {
   }
 
   public function getDimension() {
-    return $this->setDimension();
+    return $this->dimensionToString();
   }
 
-  private function setDimension() {
-    return "(".$this->height.", ".$this->width.", ".$this->depth.") <strong>cm</strong> - ".$this->setWeight();
+  private function dimensionToString() {
+    return "(".$this->height.", ".$this->width.", ".$this->depth.") <strong>cm</strong> - ".$this->weightToString();
   }
 
-  private function setWeight() {
+  private function weightToString() {
     return $this->weight." <strong>Kg</strong>";
   }
 }
