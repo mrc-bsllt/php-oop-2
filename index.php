@@ -1,6 +1,6 @@
 <?php
   require_once __DIR__."/classes/Phone.php";
-  $firstPhone = new Phone("Apple iPhone 12 Pro Max", 1350, "Unieuro", "Apple", "iPhone 12 Pro Max", 100, 50, 1, 0.4)
+  $firstPhone = new Phone("Apple iPhone 12 Pro Max - Nero", 1350, "Unieuro", "Apple", "iPhone 12 Pro Max", 100, 50, 1, 0.4)
 
 ?>
 
@@ -16,8 +16,16 @@
   <body>
     <h1>Prodotti</h1>
     <div class="product">
+      <img src="<?= $firstPhone->image; ?>" alt="<?= $firstPhone->product_name; ?>">
       <h2><?= $firstPhone->product_name; ?></h2>
-      <p>Prezzo: <?= $firstPhone->getPrice("&#8364;"); ?></p>
+      <p><?= $firstPhone->description; ?></p>
+      <p>Marca: <?= $firstPhone->brand." - ".$firstPhone->model ?></p>
+      <p>
+        Dimensioni prodotto: <br>
+        <?= $firstPhone->getDimension() ?>
+      </p>
+      <small>Rivenditore: <strong><?= $firstPhone->seller; ?></strong></small>
+      <small>Prezzo: <strong><?= $firstPhone->getPrice("&#8364;"); ?></strong></small>
 
     </div>
 
